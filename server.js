@@ -12,6 +12,7 @@ let ts = 0;
 
 server.listen(port, () => {
     console.log('Server listening on ', port);
+    console.log('Press any key to manually reset counter and timestamp');
 });
 
 //TEST ENDPOINT
