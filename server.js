@@ -11,7 +11,7 @@ let count = 0;
 let ts = 0;
 
 server.listen(port, () => {
-    console.log('Server listening on ', port);
+    console.log('Server listening on port: ', port);
     console.log('Press any key to manually reset counter and timestamp');
 });
 
@@ -23,6 +23,7 @@ app.get('/', (req, res) => {
     if(ts2 - ts > AUTO_RESET_INTERVAL){
       ts = 0;
       count = 0;
+      console.log('*');
     }
 
     count++;
@@ -45,7 +46,7 @@ stdin.setEncoding( 'utf8' );
 stdin.on( 'data', function( key ){
     count = 0;
     ts = 0;
-    console.log('Reset');
+    console.log('*');
 
   // ctrl-c ( end of text )
   if ( key === '\u0003' ) {
